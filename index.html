@@ -23,7 +23,13 @@
             --warning: #f4a261;
             --error: #e76f51;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(180deg, var(--accent) 0%, var(--bg) 30%, #fff 100%);
@@ -31,6 +37,8 @@
             min-height: 100vh;
             line-height: 1.6;
         }
+
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -44,6 +52,7 @@
             align-items: center;
             box-shadow: 0 2px 20px var(--shadow);
         }
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -51,7 +60,13 @@
             font-weight: 700;
             text-decoration: none;
         }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
         .nav-links a {
             text-decoration: none;
             color: var(--primary-dark);
@@ -59,13 +74,19 @@
             font-size: 0.9rem;
             transition: color 0.3s;
         }
-        .nav-links a:hover { color: var(--primary-light); }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Hero Section */
         .hero {
             padding: 10rem 5% 4rem;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -77,6 +98,7 @@
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
+
         .hero-badge .status-dot {
             width: 8px;
             height: 8px;
@@ -84,7 +106,12 @@
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
@@ -92,13 +119,19 @@
             margin-bottom: 1rem;
             line-height: 1.2;
         }
-        .hero h1 span { color: var(--primary-light); }
+
+        .hero h1 span {
+            color: var(--primary-light);
+        }
+
         .hero-subtitle {
             font-size: 1.1rem;
             color: var(--text-muted);
             max-width: 500px;
             margin: 0 auto 2rem;
         }
+
+        /* Stats Bar */
         .stats-bar {
             display: flex;
             justify-content: center;
@@ -107,102 +140,60 @@
             background: var(--card);
             border-radius: 16px;
             box-shadow: 0 4px 20px var(--shadow);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
-        .stat { text-align: center; }
-        .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); }
-        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 5% 4rem; }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5% 4rem;
+        }
+
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
         }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-dark); }
-        .last-updated { font-size: 0.85rem; color: var(--text-muted); }
-        .controls {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 12px var(--shadow);
-            border: 1px solid var(--border);
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
         }
-        .search-box { position: relative; margin-bottom: 1rem; }
-        .search-box input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            transition: all 0.3s;
-        }
-        .search-box input:focus { outline: none; border-color: var(--primary-light); background: var(--card); }
-        .search-box input::placeholder { color: var(--text-muted); }
-        .search-box svg {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+
+        .last-updated {
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
-        .filter-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-        .filter-group { display: flex; align-items: center; gap: 0.5rem; }
-        .filter-group label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
-        .filter-select {
-            padding: 0.6rem 2.5rem 0.6rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2352796f' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            transition: all 0.3s;
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.25rem;
         }
-        .filter-select:focus { outline: none; border-color: var(--primary-light); }
-        .tag-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-left: auto; }
-        .tag-filter {
-            padding: 0.4rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 2px solid transparent;
-            background: var(--bg);
-            color: var(--text-muted);
-        }
-        .tag-filter:hover { background: var(--accent); color: var(--primary); }
-        .tag-filter.active { background: var(--primary); color: white; border-color: var(--primary); }
-        .clear-filters {
-            padding: 0.4rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            transition: all 0.2s;
-        }
-        .clear-filters:hover { background: var(--error); color: white; border-color: var(--error); }
-        .results-count { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
-        .results-count strong { color: var(--primary); }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; }
+
+        /* Project Card */
         .project-card {
             background: var(--card);
             border-radius: 16px;
@@ -214,10 +205,25 @@
             border: 1px solid var(--border);
             box-shadow: 0 2px 8px var(--shadow);
         }
-        .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow); border-color: var(--primary-light); }
-        .project-card.hidden { display: none; }
-        .card-main { display: flex; flex-direction: column; gap: 0.75rem; }
-        .card-header { display: flex; align-items: center; gap: 0.875rem; }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--primary-light);
+        }
+
+        .card-main {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+        }
+
         .project-icon {
             width: 44px;
             height: 44px;
@@ -229,7 +235,12 @@
             font-size: 1.25rem;
             flex-shrink: 0;
         }
-        .project-info { flex: 1; min-width: 0; }
+
+        .project-info {
+            flex: 1;
+            min-width: 0;
+        }
+
         .project-name {
             font-size: 1rem;
             font-weight: 600;
@@ -239,7 +250,13 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .project-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .project-type {
             display: inline-flex;
             align-items: center;
@@ -252,30 +269,15 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
-        .project-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.5rem; }
-        .project-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.15rem 0.5rem;
-            border-radius: 50px;
-            font-size: 0.65rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+
+        .health-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            flex-shrink: 0;
         }
-        .tag-api { background: #e3f2fd; color: #1565c0; }
-        .tag-frontend { background: #f3e5f5; color: #7b1fa2; }
-        .tag-backend { background: #e8f5e9; color: #2e7d32; }
-        .tag-ai { background: #fff3e0; color: #ef6c00; }
-        .tag-tool { background: #fce4ec; color: #c2185b; }
-        .tag-demo { background: #e0f2f1; color: #00695c; }
-        .tag-experimental { background: #f5f5f5; color: #616161; }
-        .tag-production { background: #e8f5e9; color: #2e7d32; }
-        .tag-testing { background: #fff8e1; color: #f57f17; }
-        .tag-portfolio { background: #e8eaf6; color: #3f51b5; }
-        .tag-automation { background: #e0f7fa; color: #00838f; }
-        .tag-docker { background: #e3f2fd; color: #0277bd; }
-        .health-dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; flex-shrink: 0; }
+
         .github-link {
             display: inline-flex;
             align-items: center;
@@ -286,35 +288,84 @@
             transition: color 0.2s;
             padding: 0.25rem 0;
         }
-        .github-link:hover { color: var(--primary); }
-        .github-link svg { width: 14px; height: 14px; flex-shrink: 0; }
-        .github-link span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
-        .no-results { text-align: center; padding: 4rem 2rem; color: var(--text-muted); }
-        .no-results-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
-        .no-results h3 { font-family: 'Playfair Display', serif; color: var(--primary-dark); margin-bottom: 0.5rem; }
+
+        .github-link:hover {
+            color: var(--primary);
+        }
+
+        .github-link svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        .github-link span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 3rem 5%;
             background: var(--primary-dark);
             color: rgba(255, 255, 255, 0.8);
         }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        .footer-info { font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7; }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-info {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero { padding: 8rem 5% 3rem; }
-            .hero h1 { font-size: 2.2rem; }
-            .stats-bar { gap: 2rem; padding: 1rem; }
-            .stat-value { font-size: 1.5rem; }
-            .filter-row { flex-direction: column; align-items: stretch; }
-            .tag-filters { margin-left: 0; justify-content: center; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 5% 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .stats-bar {
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <a href="https://profikid.nl" class="logo">🌿 PROFIKID.NL</a>
         <ul class="nav-links">
@@ -324,6 +375,7 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-badge">
             <span class="status-dot"></span>
@@ -334,223 +386,233 @@
         
         <div class="stats-bar">
             <div class="stat">
-                <div class="stat-value" id="total-projects">0</div>
+                <div class="stat-value">10</div>
                 <div class="stat-label">Projects</div>
             </div>
             <div class="stat">
-                <div class="stat-value" id="healthy-projects">0</div>
+                <div class="stat-value">10</div>
                 <div class="stat-label">Healthy</div>
             </div>
             <div class="stat">
                 <div class="stat-value">99.9%</div>
                 <div class="stat-label">Uptime</div>
             </div>
-            <div class="stat">
-                <div class="stat-value" id="category-count">0</div>
-                <div class="stat-label">Categories</div>
-            </div>
         </div>
     </section>
 
+    <!-- Main Content -->
     <div class="container" id="deployments">
         <div class="section-header">
             <h2 class="section-title">Active Projects</h2>
-            <span class="last-updated" id="last-updated">Last updated: Just now</span>
+            <span class="last-updated">Last updated: 2026-03-24 13:37 UTC</span>
         </div>
 
-        <div class="controls">
-            <div class="search-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-                <input type="text" id="search-input" placeholder="Search projects by name, type, or tag...">
-            </div>
-            <div class="filter-row">
-                <div class="filter-group">
-                    <label for="category-filter">Category:</label>
-                    <select id="category-filter" class="filter-select">
-                        <option value="">All Categories</option>
-                    </select>
+        <div class="projects-grid">
+<a href="https://cloudflare-image-gen.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🖼️</div>
+                        <div class="project-info">
+                            <div class="project-name">Cloudflare Image Gen</div>
+                            <div class="project-meta">
+                                <span class="project-type">Image Generation</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/cloudflare-image-gen" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/cloudflare-image-gen</span>
+                        </a>
                 </div>
-                <div class="filter-group">
-                    <label for="status-filter">Status:</label>
-                    <select id="status-filter" class="filter-select">
-                        <option value="">All Status</option>
-                        <option value="healthy">Healthy</option>
-                        <option value="warning">Warning</option>
-                        <option value="error">Error</option>
-                    </select>
+            </a>
+<a href="https://commands.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🚀</div>
+                        <div class="project-info">
+                            <div class="project-name">Commands</div>
+                            <div class="project-meta">
+                                <span class="project-type">Unknown</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/commands.git" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/commands.git</span>
+                        </a>
                 </div>
-                <div class="tag-filters" id="tag-filters">
-                    <button class="clear-filters" id="clear-filters">Clear</button>
+            </a>
+<a href="https://daandels-website.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🌐</div>
+                        <div class="project-info">
+                            <div class="project-name">Daandels Website</div>
+                            <div class="project-meta">
+                                <span class="project-type">Website</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/daandels-website" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/daandels-website</span>
+                        </a>
                 </div>
-            </div>
-        </div>
-
-        <div class="results-count" id="results-count">Loading projects...</div>
-
-        <div class="projects-grid" id="projects-grid"></div>
-
-        <div class="no-results hidden" id="no-results">
-            <div class="no-results-icon">🔍</div>
-            <h3>No projects found</h3>
-            <p>Try adjusting your search or filters</p>
+            </a>
+<a href="https://danielsanjer.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🐳</div>
+                        <div class="project-info">
+                            <div class="project-name">Danielsanjer</div>
+                            <div class="project-meta">
+                                <span class="project-type">Docker</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/danielsanjer" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/danielsanjer</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://google-image-gen.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🖼️</div>
+                        <div class="project-info">
+                            <div class="project-name">Google Image Gen</div>
+                            <div class="project-meta">
+                                <span class="project-type">Image Generation</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/google-image-gen" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/google-image-gen</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://khao-sok-friendship.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🐳</div>
+                        <div class="project-info">
+                            <div class="project-name">Khao Sok Friendship</div>
+                            <div class="project-meta">
+                                <span class="project-type">Docker</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/khao-sok-friendship" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/khao-sok-friendship</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://orange-portfolio.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">👤</div>
+                        <div class="project-info">
+                            <div class="project-name">Orange Portfolio</div>
+                            <div class="project-meta">
+                                <span class="project-type">Portfolio</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/orange-portfolio" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/orange-portfolio</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://pandanus.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🐳</div>
+                        <div class="project-info">
+                            <div class="project-name">Pandanus.Clawd.Profikid.Nl</div>
+                            <div class="project-meta">
+                                <span class="project-type">Docker</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/pandanus" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/pandanus</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://pollinations-image-gen.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🖼️</div>
+                        <div class="project-info">
+                            <div class="project-name">Pollinations Image Gen</div>
+                            <div class="project-meta">
+                                <span class="project-type">Image Generation</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/pollinations-image-gen" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/pollinations-image-gen</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://polymarket.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🐳</div>
+                        <div class="project-info">
+                            <div class="project-name">Polymarket</div>
+                            <div class="project-meta">
+                                <span class="project-type">Docker</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/polymarket" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/polymarket</span>
+                        </a>
+                </div>
+            </a>
+<a href="https://test-project.clawd.profikid.nl" class="project-card" target="_blank">
+                <div class="card-main">
+                    <div class="card-header">
+                        <div class="project-icon">🧪</div>
+                        <div class="project-info">
+                            <div class="project-name">Test Project</div>
+                            <div class="project-meta">
+                                <span class="project-type">Testing</span>
+                                <span class="health-dot" title="Healthy"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/profikid/test-project" class="github-link" target="_blank" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            <span>profikid/test-project</span>
+                        </a>
+                </div>
+            </a>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>Powered by <a href="https://clawd.profikid.nl">Clawd</a> — Automatic Docker deployments with SSL + GitHub Integration</p>
         <p class="footer-info">VPS: 69.62.114.199 | Traefik + Let's Encrypt</p>
     </footer>
-
-    <script>
-        const projects = [
-            { name: "Cloudflare Image Gen", type: "Image Generation", icon: "🖼️", url: "https://cloudflare-image-gen.clawd.profikid.nl", github: "profikid/cloudflare-image-gen", tags: ["ai", "api", "automation", "docker", "frontend"], status: "healthy" },
-            { name: "Commands", type: "Unknown", icon: "🚀", url: "https://commands.clawd.profikid.nl", github: "profikid/commands.git", tags: ["tool", "automation"], status: "healthy" },
-            { name: "Daandels Website", type: "Website", icon: "🌐", url: "https://daandels-website.clawd.profikid.nl", github: "profikid/daandels-website", tags: ["frontend", "production"], status: "healthy" },
-            { name: "Danielsanjer", type: "Docker", icon: "🐳", url: "https://danielsanjer.clawd.profikid.nl", github: "profikid/danielsanjer", tags: ["backend", "docker"], status: "healthy" },
-            { name: "Google Image Gen", type: "Image Generation", icon: "🖼️", url: "https://google-image-gen.clawd.profikid.nl", github: "profikid/google-image-gen", tags: ["ai", "api", "production"], status: "healthy" },
-            { name: "Khao Sok Friendship", type: "Docker", icon: "🐳", url: "https://khao-sok-friendship.clawd.profikid.nl", github: "profikid/khao-sok-friendship", tags: ["website", "production"], status: "healthy" },
-            { name: "Orange Portfolio", type: "Portfolio", icon: "👤", url: "https://orange-portfolio.clawd.profikid.nl", github: "profikid/orange-portfolio", tags: ["portfolio", "frontend", "production"], status: "healthy" },
-            { name: "Pandanus", type: "Docker", icon: "🐳", url: "https://pandanus.clawd.profikid.nl", github: "profikid/pandanus", tags: ["backend", "docker"], status: "healthy" },
-            { name: "Pollinations Image Gen", type: "Image Generation", icon: "🖼️", url: "https://pollinations-image-gen.clawd.profikid.nl", github: "profikid/pollinations-image-gen", tags: ["ai", "api", "production"], status: "healthy" },
-            { name: "Polymarket", type: "Docker", icon: "🐳", url: "https://polymarket.clawd.profikid.nl", github: "profikid/polymarket", tags: ["trading", "backend", "experimental"], status: "healthy" },
-            { name: "Test Project", type: "Testing", icon: "🧪", url: "https://test-project.clawd.profikid.nl", github: "profikid/test-project", tags: ["testing", "experimental"], status: "healthy" }
-        ];
-
-        const searchInput = document.getElementById('search-input');
-        const categoryFilter = document.getElementById('category-filter');
-        const statusFilter = document.getElementById('status-filter');
-        const tagFiltersContainer = document.getElementById('tag-filters');
-        const projectsGrid = document.getElementById('projects-grid');
-        const noResults = document.getElementById('no-results');
-        const resultsCount = document.getElementById('results-count');
-        let activeTag = null;
-
-        function getAllTags() {
-            const tags = new Set();
-            projects.forEach(p => p.tags.forEach(t => tags.add(t)));
-            return Array.from(tags).sort();
-        }
-
-        function getAllCategories() {
-            return [...new Set(projects.map(p => p.type))].sort();
-        }
-
-        function init() {
-            populateCategoryFilter();
-            populateTagFilters();
-            renderProjects(projects);
-            updateStats();
-            setupEventListeners();
-            updateLastUpdated();
-        }
-
-        function populateCategoryFilter() {
-            const categories = getAllCategories();
-            categoryFilter.innerHTML = '<option value="">All Categories</option>' +
-                categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
-        }
-
-        function populateTagFilters() {
-            const tags = getAllTags();
-            const tagButtons = tags.map(tag => 
-                `<button class="tag-filter" data-tag="${tag}">${tag}</button>`
-            ).join('');
-            tagFiltersContainer.innerHTML = tagButtons + '<button class="clear-filters" id="clear-filters">Clear</button>';
-            document.querySelectorAll('.tag-filter').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tag = btn.dataset.tag;
-                    if (activeTag === tag) {
-                        activeTag = null;
-                        btn.classList.remove('active');
-                    } else {
-                        document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
-                        activeTag = tag;
-                        btn.classList.add('active');
-                    }
-                    filterProjects();
-                });
-            });
-            document.getElementById('clear-filters').addEventListener('click', clearFilters);
-        }
-
-        function renderProjects(projectList) {
-            projectsGrid.innerHTML = projectList.map(project => {
-                const tagsHtml = project.tags.map(tag => `<span class="project-tag tag-${tag}">${tag}</span>`).join('');
-                return `<a href="${project.url}" class="project-card" target="_blank" data-name="${project.name.toLowerCase()}" data-type="${project.type}" data-tags="${project.tags.join(' ')}" data-status="${project.status}">
-                    <div class="card-main">
-                        <div class="card-header">
-                            <div class="project-icon">${project.icon}</div>
-                            <div class="project-info">
-                                <div class="project-name">${project.name}</div>
-                                <div class="project-meta">
-                                    <span class="project-type">${project.type}</span>
-                                    <span class="health-dot" title="${project.status.charAt(0).toUpperCase() + project.status.slice(1)}"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-tags">${tagsHtml}</div>
-                        <a href="https://github.com/${project.github}" class="github-link" target="_blank" onclick="event.stopPropagation();">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            <span>${project.github}</span>
-                        </a>
-                    </div>
-                </a>`;
-            }).join('');
-            updateResultsCount(projectList.length);
-        }
-
-        function updateStats() {
-            document.getElementById('total-projects').textContent = projects.length;
-            document.getElementById('healthy-projects').textContent = projects.filter(p => p.status === 'healthy').length;
-            document.getElementById('category-count').textContent = getAllCategories().length;
-        }
-
-        function updateLastUpdated() {
-            const now = new Date();
-            const timeString = now.toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-            document.getElementById('last-updated').textContent = `Last updated: ${timeString}`;
-        }
-
-        function updateResultsCount(count) {
-            resultsCount.innerHTML = `Showing <strong>${count}</strong> project${count !== 1 ? 's' : ''}`;
-            noResults.classList.toggle('hidden', count > 0);
-        }
-
-        function filterProjects() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const category = categoryFilter.value;
-            const status = statusFilter.value;
-            const filtered = projects.filter(project => {
-                const matchesSearch = project.name.toLowerCase().includes(searchTerm) ||
-                                    project.type.toLowerCase().includes(searchTerm) ||
-                                    project.tags.some(tag => tag.toLowerCase().includes(searchTerm));
-                const matchesCategory = !category || project.type === category;
-                const matchesStatus = !status || project.status === status;
-                const matchesTag = !activeTag || project.tags.includes(activeTag);
-                return matchesSearch && matchesCategory && matchesStatus && matchesTag;
-            });
-            renderProjects(filtered);
-        }
-
-        function clearFilters() {
-            searchInput.value = '';
-            categoryFilter.value = '';
-            statusFilter.value = '';
-            activeTag = null;
-            document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
-            filterProjects();
-        }
-
-        function setupEventListeners() {
-            searchInput.addEventListener('input', filterProjects);
-            categoryFilter.addEventListener('change', filterProjects);
-            statusFilter.addEventListener('change', filterProjects);
-        }
-
-        init();
-    </script>
 </body>
 </html>
